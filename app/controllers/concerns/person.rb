@@ -1,24 +1,29 @@
 class Person
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :nickname
 
   def initialize(name, age)
     @name = name
     @age = age
+    @nickname = name.byteslice(0,4)
   end
 
   def nickname
     # YOUR IMPLEMENTATION HERE
-    'delete_me'
+    @nickname
   end
 
   def birth_year
     # YOUR IMPLEMENTATION HERE
-    1990
+    Time.now.year - @age.to_i
   end
 
   def introduction
     # YOUR IMPLEMENTATION HERE
-    'delete_me'
+    "#{@name} #{@age}"
+  end
+
+  def me 
+
   end
 
 end
